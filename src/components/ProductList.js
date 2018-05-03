@@ -1,14 +1,14 @@
 import React from 'react';
 import '../css/product-list.css'
 
-const ProductList = () => {
+const ProductList = (props) => {
     return (
-        <div class="product-list">
+        <div className="product-list">
             <ul>
-                <li>Beer</li>
-                <li>Beer</li>
-                <li>Beer</li>
-                <li>Beer</li>
+                <li onClick={props.onClickItem}>{props.beerName}</li>
+                <li onClick={props.onClickItem}>{props.beerName}</li>
+                <li onClick={props.onClickItem}>{props.beerName}</li>
+                <li onClick={props.onClickItem}>{props.beerName}</li>
             </ul>
         </div>
     );

@@ -3,7 +3,7 @@ import '../css/logo.css';
 
 const Logo = () => {
     return (
-        <div class="logo-box">
+        <div className="logo-box">
             <h1>Beau's</h1>
         </div>
     );
