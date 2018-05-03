@@ -1,0 +1,10 @@
+.app-container {
+    border: 1px solid black;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 400px;
+    grid-template-rows: auto;
+   
+}

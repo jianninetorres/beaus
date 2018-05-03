@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,AAAC,CACjB,SAAS,CAAE,aAAa,CAC3B",
+    "sources": [
+        "../scss/components/company-description.scss"
+    ],
+    "names": [],
+    "file": "company-description.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,AAAC,CACR,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,KAAK,CACjB,MAAM,CAAE,SAAS,CACjB,SAAS,CAAE,aAAa,CAC3B",
+    "sources": [
+        "../scss/components/image-view.scss"
+    ],
+    "names": [],
+    "file": "image-view.css"
+}

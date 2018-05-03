@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,AAAC,CACV,SAAS,CAAE,aAAa,CAC3B",
+    "sources": [
+        "../scss/components/product-list.scss"
+    ],
+    "names": [],
+    "file": "product-list.css"
+}
