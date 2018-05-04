@@ -9,12 +9,10 @@ import ProductDescription from './components/ProductDescription';
 const ACCESS_KEY = 'MDoxYTVlY2Q1ZS00ZjBlLTExZTgtYjEzNS1mYjdmYjJlYzY0OWY6OEEwWkZqVVIyUVBvakNiY0xSYXdqOUt6UXNCb0VGN09PbnBL';
 
 const beersNotLugTread = null;
-// const beers = [];
 
 class App extends Component {
   state = {
     beerList: [],
-    beerName: 'Beaus Beer'
   }
 
   getProducts = async (e) => {

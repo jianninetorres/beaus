@@ -1,2 +1,2 @@
-.product-list{grid-area:3 / 1 / 4 / 2}.product-list ul li{list-style-type:none;margin:20px 0}
+.product-list{grid-area:3 / 1 / 4 / 2}.product-list ul{border:1px solid black;overflow:scroll;max-height:350px}.product-list ul li{list-style-type:none;margin:20px 0}
 /*# sourceMappingURL=product-list.css.map */
