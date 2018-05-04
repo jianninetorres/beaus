@@ -8,12 +8,16 @@ import ProductDescription from './components/ProductDescription';
 
 const ACCESS_KEY = 'MDoxYTVlY2Q1ZS00ZjBlLTExZTgtYjEzNS1mYjdmYjJlYzY0OWY6OEEwWkZqVVIyUVBvakNiY0xSYXdqOUt6UXNCb0VGN09PbnBL';
 
+const beersNotLugTread = null;
+// const beers = [];
+
 class App extends Component {
   state = {
+    beerList: [],
     beerName: 'Beaus Beer'
   }
 
-  getProducts = async () => {
+  getProducts = async (e) => {
     /* The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with the result of parsing the body text as JSON. */
     const api_call = await fetch(`https://lcboapi.com/products?access_key=${ACCESS_KEY}&q=beaus+all+natural+brewing&per_page=30`);
 
@@ -26,10 +30,11 @@ class App extends Component {
       return !product.name.includes('Lug Tread');
     });
     console.log('Not Lug Tread', beersNotLugTread);
-  }
 
-  getBeerName = () => {
-    
+    this.setState({
+      beerList: beersNotLugTread
+    });
+    console.log('New Beer List: ', this.state.beerList);
   }
 
   /* call API on initial render */
@@ -42,7 +47,7 @@ class App extends Component {
       <div className="app-container">
         <Logo />
         <CompanyDescription />
-        <ProductList />
+        <ProductList beerList={this.state.beerList}/>
         <ImageView />
         <ProductDescription /> 
       </div>

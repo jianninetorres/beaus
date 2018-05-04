@@ -2,13 +2,13 @@ import React from 'react';
 import '../css/product-list.css'
 
 const ProductList = (props) => {
-    return (
+    const listItems = props.beerList.map((beer) => 
+        <li key={beer.id}>{beer.name}</li>
+      );
+      return (
         <div className="product-list">
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                {listItems}
             </ul>
         </div>
     );
