@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import './css/app.css';
 import Logo from './components/Logo';
-import CompanyDescription from './components/CompanyDescription';
 import ProductList from './components/ProductList';
 import ImageView from './components/ImageView';
 import ProductDescription from './components/ProductDescription';
 
 const ACCESS_KEY = 'MDoxYTVlY2Q1ZS00ZjBlLTExZTgtYjEzNS1mYjdmYjJlYzY0OWY6OEEwWkZqVVIyUVBvakNiY0xSYXdqOUt6UXNCb0VGN09PbnBL';
-
-// const beersNotLugTread = null;
 
 class App extends Component {
   state = {
@@ -75,7 +72,6 @@ class App extends Component {
     return (
       <div className="app-container">
         <Logo />
-        <CompanyDescription />
         <ProductList 
           beerList={this.state.beerList}
           clickItem={this.onClickListItem} />
@@ -94,6 +90,3 @@ class App extends Component {
 }
 
 export default App;
-
-{/* <ShowStoresWithProduct 
-            locations={this.state.locations}/> */}
