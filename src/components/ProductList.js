@@ -3,9 +3,9 @@ import '../css/product-list.css'
 
 class ProductList extends Component {
 
-    onClickListItem = (description, image, alcoholContent, tertiaryCategory, price, productID) => {
+    onClickListItem = (name, description, image, alcoholContent, tertiaryCategory, price, productID) => {
         const priceInDollars = price / 100;
-        this.props.clickItem(description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
+        this.props.clickItem(name, description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
         console.log(description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
     }
 
@@ -18,6 +18,7 @@ class ProductList extends Component {
         const listItems = this.props.beerList.map((beer) => beer.name.match(/beau's/i) 
             ? <li key={beer.id} onClick={
                 () => this.onClickListItem(
+                        (beer.name),
                         (beer.tasting_note ? beer.tasting_note : beer.style), 
                         (beer.image_url ? beer.image_url : defaultImage),
                         (beer.alcohol_content),
@@ -29,6 +30,7 @@ class ProductList extends Component {
             
             : <li key={beer.id} onClick={
                 () => this.onClickListItem(
+                        (beer.name),
                         (beer.tasting_note ? beer.tasting_note : beer.style),
                         (beer.image_url ? beer.image_url : defaultImage),
                         (beer.alcohol_content),

@@ -10,6 +10,7 @@ const ACCESS_KEY = 'MDoxYTVlY2Q1ZS00ZjBlLTExZTgtYjEzNS1mYjdmYjJlYzY0OWY6OEEwWkZq
 class App extends Component {
   state = {
     beerList: [],
+    productName: '',
     productDescription: 'Since 2006 Beau’s All Natural has been brewing interesting, tasty beers using the best ingredients & local spring water. Our family takes pride in creating unique, wonderful and certified organic craft beer, conceived with honest consideration for the environment and our local communities, and delivered with a sense of friendly relationship.',
     image: 'https://beaus.ca/wp-content/uploads/2014/12/aboutus-aboutbeaus.jpg',
     alcoholContent: '',
@@ -56,8 +57,9 @@ class App extends Component {
     this.getProducts();
   }
 
-  onClickListItem = (description, image, alcoholContent, tertiaryCategory, priceInDollars, productID) => {
+  onClickListItem = (name, description, image, alcoholContent, tertiaryCategory, priceInDollars, productID) => {
     this.setState({
+      productName: name,
       productDescription: description,
       image: image,
       alcoholContent: `Alcohol content: ${alcoholContent}`,
@@ -77,7 +79,8 @@ class App extends Component {
           clickItem={this.onClickListItem} />
         <ImageView
           image={this.state.image}/>
-        <ProductDescription 
+        <ProductDescription
+          productName={this.state.productName} 
           productDescription={this.state.productDescription}
           alcoholContent={this.state.alcoholContent}
           tertiaryCategory={this.state.tertiaryCategory}
