@@ -41,11 +41,11 @@ class App extends Component {
   }
 
   getStores = async (productID) => {
-    const api_getStores = await fetch(`https://lcboapi.com/stores?access_key=${ACCESS_KEY}&${productID}`);
+    const api_getStores = await fetch(`https://lcboapi.com/stores?access_key=${ACCESS_KEY}&${this.state.productID}`);
 
     const data_stores = await api_getStores.json();
     const stores = data_stores.result;
-    console.log('Stores: ', stores);
+    console.log('Stores: ', stores, 'Product ID: ', this.state.productID);
 
     this.setState({
       locations: stores
@@ -65,9 +65,10 @@ class App extends Component {
       alcoholContent: `Alcohol content: ${alcoholContent}`,
       tertiaryCategory: `Category: ${tertiaryCategory}`,
       priceInDollars: `Price: $${priceInDollars}`,
-      productID: `Where to find: ${productID}`
+      productID,
     });
     this.getStores(this.state.productID);
+    console.log('Product ID: ', productID);
   }
 
   render() {
@@ -78,7 +79,7 @@ class App extends Component {
           beerList={this.state.beerList}
           clickItem={this.onClickListItem} />
         <ImageView
-          image={this.state.image}/>
+          image={this.state.image} />
         <ProductDescription
           productName={this.state.productName} 
           productDescription={this.state.productDescription}
@@ -86,7 +87,7 @@ class App extends Component {
           tertiaryCategory={this.state.tertiaryCategory}
           priceInDollars={this.state.priceInDollars}
           productID={this.state.productID} 
-          locations={this.state.locations}/> 
+          locations={this.state.locations} />
       </div>
     );
   }
