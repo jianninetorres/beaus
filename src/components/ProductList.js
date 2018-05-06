@@ -3,10 +3,10 @@ import '../css/product-list.css'
 
 class ProductList extends Component {
 
-    onClickListItem = (description, image, alcoholContent, tertiaryCategory, price) => {
+    onClickListItem = (description, image, alcoholContent, tertiaryCategory, price, productID) => {
         const priceInDollars = price / 100;
-        this.props.clickItem(description, image, alcoholContent, tertiaryCategory, priceInDollars);
-        console.log(description, image, alcoholContent, tertiaryCategory, priceInDollars);
+        this.props.clickItem(description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
+        console.log(description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
     }
 
     render() {
@@ -22,7 +22,8 @@ class ProductList extends Component {
                         (beer.image_url ? beer.image_url : defaultImage),
                         (beer.alcohol_content),
                         (beer.tertiary_category ? beer.tertiary_category : ''),
-                        (beer.price_in_cents)
+                        (beer.price_in_cents),
+                        (beer.id)
                     )
                 } > {beer.name.replace(/beau's/i, '')}</li> 
             
@@ -32,7 +33,8 @@ class ProductList extends Component {
                         (beer.image_url ? beer.image_url : defaultImage),
                         (beer.alcohol_content),
                         (beer.tertiary_category ? beer.tertiary_category : ''),
-                        (beer.price_in_cents)
+                        (beer.price_in_cents),
+                        (beer.id)
                     )
                 } > {beer.name}</li>,
         );

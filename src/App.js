@@ -17,7 +17,8 @@ class App extends Component {
     image: 'https://beaus.ca/wp-content/uploads/2014/12/aboutus-aboutbeaus.jpg',
     alcoholContent: '',
     tertiaryCategory: '',
-    priceInDollars: ''
+    priceInDollars: '',
+    productID: ''
   }
 
   getProducts = async (e) => {
@@ -40,19 +41,29 @@ class App extends Component {
     console.log('New Beer List: ', this.state.beerList);
   }
 
+  getStores = async (productID) => {
+    const api_getStores = await fetch(`https://lcboapi.com/stores?access_key=${ACCESS_KEY}&${productID}`);
+
+    const data_stores = await api_getStores.json();
+    const stores = data_stores.result;
+    console.log(stores);
+  }
+
   /* call API on initial render */
   componentWillMount = () => {
     this.getProducts();
   }
 
-  onClickListItem = (description, image, alcoholContent, tertiaryCategory, priceInDollars) => {
+  onClickListItem = (description, image, alcoholContent, tertiaryCategory, priceInDollars, productID) => {
     this.setState({
       productDescription: description,
       image: image,
       alcoholContent: `Alcohol content: ${alcoholContent}`,
       tertiaryCategory: `Category: ${tertiaryCategory}`,
-      priceInDollars: `Price: $${priceInDollars}`
-    })
+      priceInDollars: `Price: $${priceInDollars}`,
+      productID: `Where to find: ${productID}`
+    });
+    this.getStores(this.state.productID);
   }
 
   render() {
@@ -68,7 +79,8 @@ class App extends Component {
           productDescription={this.state.productDescription}
           alcoholContent={this.state.alcoholContent}
           tertiaryCategory={this.state.tertiaryCategory}
-          priceInDollars={this.state.priceInDollars} /> 
+          priceInDollars={this.state.priceInDollars}
+          productID={this.state.productID} /> 
       </div>
     );
   }
