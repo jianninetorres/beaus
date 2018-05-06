@@ -18,7 +18,8 @@ class App extends Component {
     alcoholContent: '',
     tertiaryCategory: '',
     priceInDollars: '',
-    productID: ''
+    productID: '',
+    locations: ''
   }
 
   getProducts = async (e) => {
@@ -46,7 +47,11 @@ class App extends Component {
 
     const data_stores = await api_getStores.json();
     const stores = data_stores.result;
-    console.log(stores);
+    console.log('Stores: ', stores);
+
+    this.setState({
+      locations: stores
+    });
   }
 
   /* call API on initial render */
@@ -74,16 +79,21 @@ class App extends Component {
         <ProductList 
           beerList={this.state.beerList}
           clickItem={this.onClickListItem} />
-        <ImageView image={this.state.image}/>
+        <ImageView
+          image={this.state.image}/>
         <ProductDescription 
           productDescription={this.state.productDescription}
           alcoholContent={this.state.alcoholContent}
           tertiaryCategory={this.state.tertiaryCategory}
           priceInDollars={this.state.priceInDollars}
-          productID={this.state.productID} /> 
+          productID={this.state.productID} 
+          locations={this.state.locations}/> 
       </div>
     );
   }
 }
 
 export default App;
+
+{/* <ShowStoresWithProduct 
+            locations={this.state.locations}/> */}
