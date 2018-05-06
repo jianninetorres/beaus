@@ -11,7 +11,10 @@ class ShowStoresWithProduct extends Component {
         return (
             <div className="product-locations">
                 {this.props.locations !== '' 
-                    ? <h3>Available at the following locations:</h3> 
+                    ?  <div>
+                        <h3>Available at the following locations:</h3>
+                        <p>Click to open map</p>
+                        </div>
                     : null
                 }
                 <ul>
@@ -20,8 +23,7 @@ class ShowStoresWithProduct extends Component {
                     ? this.props.locations.map((location) => 
                         <li key={location.id} onClick={
                             () => this.openMap(location.address_line_1, location.city)}>
-                            {location.name}
-                            <br />
+                            <h4>{location.name}</h4>
                             {location.address_line_1}
                             <br />
                             {location.city}

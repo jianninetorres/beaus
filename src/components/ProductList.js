@@ -42,6 +42,7 @@ class ProductList extends Component {
         );
         return (
             <div className="product-list">
+                <p>Scroll through our selection below and click to view details.</p>
                 <ul>
                     {listItems}
                 </ul>

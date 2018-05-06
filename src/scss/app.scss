@@ -1,9 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
+
 .app-container {
-    border: 1px solid black;
-    width: 810px;
+    // border: 1px solid black;
+    width: 750px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 350px 450px;
+    grid-template-columns: 350px 400px;
     grid-template-rows: auto;
-    grid-gap: 10px;
+    grid-gap: 50px;
+
+    h1, h3 {
+        font-family: 'Abril Fatface', cursive;
+        letter-spacing: 0.7px;
+    }
+    h1 {
+        color: #C4A077;
+        font-size: 3em;
+    }
+    h3 {
+        color: #C4A077;
+        font-size: 1.5em;
+    }
+    h4 {
+        margin: 0;
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+        &:visited {
+            color: #C4A077;
+        }
+    }
+    p, li, h4 {
+        font-family: 'Open Sans', sans-serif;
+        color: #634131;
+    }
+    li {
+        cursor: pointer;
+    }
+    ::-webkit-scrollbar {
+        width: 1em;
+    }
+     
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+     
+    ::-webkit-scrollbar-thumb {
+      background-color: #A5BABB;
+      outline: 1px solid darkgray;
+    }
+    ::-webkit-scrollbar-button {
+        background-color: #A5BABB;
+        outline: 1px solid darkgray;
+    }
 }
