@@ -7,7 +7,7 @@ class ProductDescription extends Component {
     render() {   
         return (
             <div className="product-description">
-                <p>{this.props.productName}</p>
+                <h3>{this.props.productName}</h3>
                 <p>{this.props.productDescription}</p>
                 <br/>
                 <p>{this.props.tertiaryCategory}</p>

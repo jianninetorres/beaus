@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import '../css/product-locations.css';
 
-/* Once a location prop has been passed after clicking a product, return the following locations*/
+/* If a location prop has been passed after clicking a product, return the following locations */
 class ShowStoresWithProduct extends Component {
     render() {
         return (
             <div className="product-locations">
+                {this.props.locations !== '' 
+                    ? <h3>Available at the following locations:</h3> 
+                    : null
+                }
                 <ul>
                 {
                     this.props.locations !== '' 
