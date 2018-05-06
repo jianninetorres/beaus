@@ -9,6 +9,7 @@ class ProductDescription extends Component {
                 <br/>
                 <p>{this.props.tertiaryCategory}</p>
                 <p>{this.props.alcoholContent}</p>
+                <p>{this.props.priceInDollars}</p>
             </div>
         );
     }

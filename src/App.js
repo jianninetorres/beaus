@@ -16,7 +16,8 @@ class App extends Component {
     productDescription: 'Since 2006 Beau’s All Natural has been brewing interesting, tasty beers using the best ingredients & local spring water. Our family takes pride in creating unique, wonderful and certified organic craft beer, conceived with honest consideration for the environment and our local communities, and delivered with a sense of friendly relationship.',
     image: 'https://beaus.ca/wp-content/uploads/2014/12/aboutus-aboutbeaus.jpg',
     alcoholContent: '',
-    tertiaryCategory: ''
+    tertiaryCategory: '',
+    priceInDollars: ''
   }
 
   getProducts = async (e) => {
@@ -44,15 +45,13 @@ class App extends Component {
     this.getProducts();
   }
 
-  onClickListItem = (description, image, alcoholContent, tertiaryCategory) => {
-    
-    // let notes = e.target.innerText;
-    // console.log(notes);
+  onClickListItem = (description, image, alcoholContent, tertiaryCategory, priceInDollars) => {
     this.setState({
       productDescription: description,
       image: image,
       alcoholContent: `Alcohol content: ${alcoholContent}`,
-      tertiaryCategory: `Category: ${tertiaryCategory}`
+      tertiaryCategory: `Category: ${tertiaryCategory}`,
+      priceInDollars: `Price: $${priceInDollars}`
     })
   }
 
@@ -68,7 +67,8 @@ class App extends Component {
         <ProductDescription 
           productDescription={this.state.productDescription}
           alcoholContent={this.state.alcoholContent}
-          tertiaryCategory={this.state.tertiaryCategory} /> 
+          tertiaryCategory={this.state.tertiaryCategory}
+          priceInDollars={this.state.priceInDollars} /> 
       </div>
     );
   }

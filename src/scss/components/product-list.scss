@@ -3,7 +3,7 @@
 
     ul {
         border: 1px solid black;
-        overflow: scroll;
+        overflow: auto;
         max-height: 350px;
         li {
             list-style-type: none;
