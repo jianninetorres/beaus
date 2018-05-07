@@ -13,7 +13,7 @@ class ShowStoresWithProduct extends Component {
                 {
                     this.props.locations !== '' 
                     ?  <div>
-                        <h3>Available at the following locations</h3>
+                        <h3>Available at the following LCBO locations</h3>
                         <p>Click the location to open map</p>
                         </div>
                     : null
