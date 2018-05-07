@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../css/product-description.css';
 import ShowStoresWithProduct from './ShowStoresWithProduct';
 
-
 class ProductDescription extends Component {
     render() {   
         return (

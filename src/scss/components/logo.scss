@@ -2,4 +2,9 @@
 
 .logo-box {
     grid-area:  1 / 1 / 2 / 2;
+
+    .logo {
+        width: 50px;
+        margin-left: 25px;
+    }
 }

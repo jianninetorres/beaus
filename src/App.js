@@ -4,11 +4,13 @@ import Logo from './components/Logo';
 import ProductList from './components/ProductList';
 import ImageView from './components/ImageView';
 import ProductDescription from './components/ProductDescription';
+import logo from'./images/beaus.png';
 
 const ACCESS_KEY = 'MDoxYTVlY2Q1ZS00ZjBlLTExZTgtYjEzNS1mYjdmYjJlYzY0OWY6OEEwWkZqVVIyUVBvakNiY0xSYXdqOUt6UXNCb0VGN09PbnBL';
 
 class App extends Component {
   state = {
+    logo,
     beerList: [],
     productName: '',
     productDescription: 'Since 2006 Beau’s All Natural has been brewing interesting, tasty beers using the best ingredients & local spring water. Our family takes pride in creating unique, wonderful and certified organic craft beer, conceived with honest consideration for the environment and our local communities, and delivered with a sense of friendly relationship.',
@@ -21,7 +23,7 @@ class App extends Component {
   }
 
   getProducts = async (e) => {
-    /* Return drinks available through LCBO that are seasonal */
+    /* Return seasonal drinks available through LCBO */
     const api_call = await fetch(`https://lcboapi.com/products?access_key=${ACCESS_KEY}&q=beaus+all+natural+brewing&per_page=30&where=is_seasonal`);
 
     /* The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with the result of parsing the body text as JSON. */
@@ -37,7 +39,6 @@ class App extends Component {
     this.setState({
       beerList: beersNotLugTread,
     });
-    console.log('New Beer List: ', this.state.beerList);
   }
 
   getStores = async (productID) => {
@@ -57,12 +58,13 @@ class App extends Component {
     this.getProducts();
   }
 
+  /* Reset states when a product is selected */
   onClickListItem = (name, description, image, alcoholContent, tertiaryCategory, priceInDollars, productID) => {
     this.setState({
       productName: name,
       productDescription: description,
       image: image,
-      alcoholContent: `Alcohol content: ${alcoholContent}`,
+      alcoholContent: `Alcohol content: ${alcoholContent}%`,
       tertiaryCategory: `Category: ${tertiaryCategory}`,
       priceInDollars: `Price: $${priceInDollars}`,
       productID,
@@ -74,7 +76,8 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <Logo />
+        <Logo 
+          logo={this.state.logo}/>
         <ProductList 
           beerList={this.state.beerList}
           clickItem={this.onClickListItem} />

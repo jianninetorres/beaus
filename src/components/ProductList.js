@@ -1,10 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../css/product-list.css'
 
 class ProductList extends Component {
 
-    onClickListItem = (name, description, image, alcoholContent, tertiaryCategory, price, productID) => {
+    /* On selection of an item, get the following data and return to parent */
+    onClickListItem = (name, description, image, alcohol, tertiaryCategory, price, productID) => {
         const priceInDollars = price / 100;
+        const alcoholContent = alcohol / 100;
         this.props.clickItem(name, description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
         console.log(description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
     }
