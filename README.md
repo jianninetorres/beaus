@@ -2,4 +2,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 App to view Beau's seasonal beverages.
 
-![Project screenshot](/Users/jianninetorres/Desktop/beaus-brewery/src/images/screenshot.png "Beau's Seasonal")
+![Project screenshot](/images/screenshot.png "Beau's Seasonal")
