@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/product-locations.css';
 
-/* If a location prop has been passed after clicking a product, return the following locations */
+/* If a location prop is available and has been passed after clicking a product, return the following locations */
 class ShowStoresWithProduct extends Component {
     openMap = (address, city) => {
         window.open(`https://www.google.ca/maps/place/${address}+${city}`)
@@ -10,10 +10,11 @@ class ShowStoresWithProduct extends Component {
     render() {
         return (
             <div className="product-locations">
-                {this.props.locations !== '' 
+                {
+                    this.props.locations !== '' 
                     ?  <div>
-                        <h3>Available at the following locations:</h3>
-                        <p>Click to open map</p>
+                        <h3>Available at the following locations</h3>
+                        <p>Click the location to open map</p>
                         </div>
                     : null
                 }
