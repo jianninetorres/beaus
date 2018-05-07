@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,kBADc,CACd,EAAE,AAAC,CACC,OAAO,CAAE,CAAC,CASb,AAXL,AAGQ,kBAHU,CACd,EAAE,CAEE,EAAE,AAAC,CACC,UAAU,CAAE,IAAI,CAChB,MAAM,CAAE,UAAU,CAKrB,AAVT,AAGQ,kBAHU,CACd,EAAE,CAEE,EAAE,AAGE,UAAY,CAAA,AAAA,GAAG,CAAE,CACb,UAAU,CAAE,qBAAwB,CACpC,OAAO,CAAE,GAAG,CACf",
+    "sources": [
+        "../scss/components/product-locations.scss"
+    ],
+    "names": [],
+    "file": "product-locations.css"
+}

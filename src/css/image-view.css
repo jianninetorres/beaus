@@ -1,2 +1,2 @@
-.image-view{width:100%;min-height:200px;border:1px solid;grid-area:1 / 2 / 2 / 3}
+.image-view{width:100%;min-height:200px;grid-area:1 / 2 / 2 / 3;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.image-view img{width:70%;min-height:auto;max-height:500px}
 /*# sourceMappingURL=image-view.css.map */

@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
 .logo-box {
-    border: 1px solid black;
     grid-area:  1 / 1 / 2 / 2;
+
+    .logo {
+        width: 50px;
+        margin-left: 25px;
+    }
 }
