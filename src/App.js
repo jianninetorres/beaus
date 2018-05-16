@@ -63,12 +63,13 @@ class App extends Component {
     this.setState({
       productName: name,
       productDescription: description,
-      image: image,
+      image,
       alcoholContent: `Alcohol content: ${alcoholContent}%`,
       tertiaryCategory: `Category: ${tertiaryCategory}`,
       priceInDollars: `Price: $${priceInDollars}`,
       productID,
     });
+    /* Get locations of that item */
     this.getStores(this.state.productID);
     console.log('Product ID: ', productID);
   }
