@@ -54,8 +54,8 @@ class App extends Component {
     })
   }
 
-  /* call API on initial render */
-  componentWillMount = () => {
+  /* call API after initial render */
+  componentDidMount = () => {
     this.getProducts();
   }
 
