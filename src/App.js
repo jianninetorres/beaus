@@ -36,9 +36,11 @@ class App extends Component {
     });
     console.log('Not Lug Tread', beersNotLugTread);
 
-    this.setState({
-      beerList: beersNotLugTread,
-    });
+    this.setState((prevState) => {
+      return {
+        beerList: beersNotLugTread
+      }
+    })
   }
 
   getStores = async (productID) => {
@@ -48,9 +50,11 @@ class App extends Component {
     const stores = data_stores.result;
     console.log('Stores: ', stores, 'Product ID: ', this.state.productID);
 
-    this.setState({
-      locations: stores
-    });
+    this.setState((prevState) => {
+      return {
+        locations: stores
+      }
+    })
   }
 
   /* call API on initial render */
@@ -60,15 +64,17 @@ class App extends Component {
 
   /* Reset states when a product is selected */
   onClickListItem = (name, description, image, alcoholContent, tertiaryCategory, priceInDollars, productID) => {
-    this.setState({
-      productName: name,
-      productDescription: description,
-      image,
-      alcoholContent: `Alcohol content: ${alcoholContent}%`,
-      tertiaryCategory: `Category: ${tertiaryCategory}`,
-      priceInDollars: `Price: $${priceInDollars}`,
-      productID,
-    });
+    this.setState((prevState) => {
+      return {
+        productName: name,
+        productDescription: description,
+        image,
+        alcoholContent: `Alcohol content: ${alcoholContent}%`,
+        tertiaryCategory: `Category: ${tertiaryCategory}`,
+        priceInDollars: `Price: $${priceInDollars}`,
+        productID,
+      }
+    })
     /* Get locations of that item */
     this.getStores(this.state.productID);
     console.log('Product ID: ', productID);
