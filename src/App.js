@@ -29,12 +29,10 @@ class App extends Component {
     /* The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with the result of parsing the body text as JSON. */
     const data = await api_call.json();
     const products = data.result;
-    console.log(products);
 
     const beersNotLugTread = products.filter(function(product) {
       return !product.name.includes('Mixed Pack');
     });
-    console.log('Not Lug Tread', beersNotLugTread);
 
     this.setState((prevState) => {
       return {
@@ -48,7 +46,6 @@ class App extends Component {
 
     const data_stores = await api_getStores.json();
     const stores = data_stores.result;
-    console.log('Stores: ', stores, 'Product ID: ', this.state.productID);
 
     this.setState((prevState) => {
       return {
@@ -77,7 +74,6 @@ class App extends Component {
     })
     /* Get locations of that item */
     this.getStores(this.state.productID);
-    console.log('Product ID: ', productID);
   }
 
   render() {

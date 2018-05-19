@@ -8,7 +8,6 @@ class ProductList extends Component {
         const priceInDollars = price / 100;
         const alcoholContent = alcohol / 100;
         this.props.clickItem(name, description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
-        console.log(description, image, alcoholContent, tertiaryCategory, priceInDollars, productID);
     }
 
     render() {
@@ -20,25 +19,25 @@ class ProductList extends Component {
         const listItems = this.props.beerList.map((beer) => beer.name.match(/beau's/i) 
             ? <li key={beer.id} onClick={
                 () => this.onClickListItem(
-                        (beer.name),
-                        (beer.tasting_note ? beer.tasting_note : beer.style), 
-                        (beer.image_url ? beer.image_url : defaultImage),
-                        (beer.alcohol_content),
-                        (beer.tertiary_category ? beer.tertiary_category : ''),
-                        (beer.price_in_cents),
-                        (beer.id)
+                        beer.name,
+                        beer.tasting_note ? beer.tasting_note : beer.style, 
+                        beer.image_url ? beer.image_url : defaultImage,
+                        beer.alcohol_content,
+                        beer.tertiary_category ? beer.tertiary_category : '',
+                        beer.price_in_cents,
+                        beer.id
                     )
                 } > {beer.name.replace(/beau's/i, '')}</li> 
             
             : <li key={beer.id} onClick={
                 () => this.onClickListItem(
-                        (beer.name),
-                        (beer.tasting_note ? beer.tasting_note : beer.style),
-                        (beer.image_url ? beer.image_url : defaultImage),
-                        (beer.alcohol_content),
-                        (beer.tertiary_category ? beer.tertiary_category : ''),
-                        (beer.price_in_cents),
-                        (beer.id)
+                        beer.name,
+                        beer.tasting_note ? beer.tasting_note : beer.style,
+                        beer.image_url ? beer.image_url : defaultImage,
+                        beer.alcohol_content,
+                        beer.tertiary_category ? beer.tertiary_category : '',
+                        beer.price_in_cents,
+                        beer.id
                     )
                 } > {beer.name}</li>,
         );
